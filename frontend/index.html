@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pricing App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>💰 Pricing App</h1>
+
+    <p id="message"></p>
+
+    <section>
+      <h2>📦 Produits disponibles</h2>
+      <select id="productSelect"></select>
+
+      <button onclick="loadSelectedProduct()">Charger</button>
+      <button onclick="deleteProduct()">Supprimer</button>
+    </section>
+
+    <section>
+      <h2>➕ Ajouter un produit</h2>
+
+      <input type="text" id="newId" placeholder="Product ID" />
+      <input type="text" id="newName" placeholder="Name" />
+      <input type="number" id="newPrice" placeholder="Price" />
+      <input type="text" id="newCurrency" placeholder="Currency" />
+
+      <button onclick="addProduct()">Ajouter</button>
+    </section>
+
+    <section>
+      <h2>✏️ Modifier un produit</h2>
+
+      <input type="text" id="editId" placeholder="Product ID" disabled />
+      <input type="text" id="editName" placeholder="Name" />
+      <input type="number" id="editPrice" placeholder="Price" />
+      <input type="text" id="editCurrency" placeholder="Currency" />
+
+      <button onclick="updateProduct()">Modifier</button>
+    </section>
+
+    <section>
+      <h2>🧮 Calculer un prix</h2>
+
+      <input type="number" id="quantity" placeholder="Quantité" value="1" />
+      <input type="number" id="promotion" placeholder="Promotion %" value="0" />
+      <input type="number" id="tax" placeholder="Tax %" value="20" />
+
+      <button onclick="calculatePrice()">Calculer</button>
+    </section>
+
+    <section>
+      <h2>📊 Résultat</h2>
+      <div id="result"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

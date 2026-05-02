@@ -1,0 +1,21 @@
+pricing-app-pro/
+│
+├── backend/
+│   ├── server.js
+│   ├── app.js
+│   ├── db.js
+│   ├── .env
+│   ├── package.json
+│   │
+│   ├── routes/
+│   │   ├── productRoutes.js
+│   │   └── priceRoutes.js
+│   │
+│   └── controllers/
+│       ├── productController.js
+│       └── priceController.js
+│
+└── frontend/
+    ├── index.html
+    ├── style.css
+    └── script.js
