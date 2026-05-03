@@ -2,6 +2,9 @@ const { getConnection } = require("../db");
 const oracledb = require("oracledb");
 const logger = require("../logger");
 
+
+const { sendEvent } = require("../kafka/producer");
+
 /**
  * Ferme proprement la connexion Oracle
  */
@@ -185,6 +188,13 @@ async function createProduct(req, res) {
       action: "CREATE_PRODUCT_SUCCESS",
       productId
     });
+    await sendEvent("product-events", {
+    event: "PRODUCT_CREATED",
+    productId,
+    name,
+    basePrice,
+    currency
+});
 
     return res.status(201).json({
       message: "Product created successfully",

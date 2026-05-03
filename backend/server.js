@@ -9,6 +9,11 @@ const { testConnection } = require("./db");
 // Définir le port du serveur (7000 par défaut si non défini dans .env)
 const PORT = process.env.PORT || 7000;
 // Démarrer le serveur Express :ouvre ton API sur http://localhost:7000
+//kafka
+const { connectProducer } = require("./kafka/producer");
+
+
+
 app.listen(PORT, async () => {
 // Log de démarrage du serveur
   logger.info({
@@ -16,6 +21,7 @@ app.listen(PORT, async () => {
     message: "Server running",
     port: Number(PORT)
   });
+await connectProducer();
 
 // Tester la connexion à la base de données:avant d’accepter des requêtes, tu vérifies que Oracle est OK
   const isConnected = await testConnection();
